@@ -122,20 +122,7 @@
 </section>
     
             @yield('content')
-   
-<!-- TODO: Step 4A2: Add a generic sidebar -->
-  <!-- The slide-out panel for showing place details -->
-  <!-- <div id="map"></div>
-  <br>
-  <p id="demo"></p>
-
-  <div id="panel"></div>
-  -->
-
-  <!-- Map appears here -->
-  
-
-    
+     
 
 </body>
 

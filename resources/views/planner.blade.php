@@ -4,113 +4,76 @@
 
 <div class="container text-center">            
 	<div class="form-group">
-		<!-- <form id="planner-form" action="{{ route('search') }}" method="GET">
-			<div class="input-group-append">
-				<select class="form-control @error('start') border border-danger @enderror" id="station_id" name="start">
-					<option value=''>Starting point</option>
-					@foreach ($stations as $station)
-						<option value="{{ json_decode($station)->id }}" {{ ( Request()->start == json_decode($station)->id ) ? 'selected' : ( $fstation == 0) }}> 
-							{{ $station->name }} 
-						</option>
-					@endforeach    
-				</select>
-				@error('start')
-					<span class="text-danger">
-						<strong> </strong>
-					</span>
-				@enderror
-				<button class="btn btn-primary text-secondary mr-3" type="button" id="endingPoint1">Add</button>
-			</div>
-			<p id="endingPoint">
-				<select class="form-control" id="station_id2" name="end">
-					<option value=''>Ending point</option>
-					@foreach ($stations as $station)
-						<option value="{{ json_decode($station)->id }}" {{ ( Request()->end == json_decode($station)->id ) ? 'selected' : ( $fstation == 0) }}> 
-							{{ $station->name }} 
-						</option>
-					@endforeach    
-				</select>
-			</p>	
-			<br>
-			<div class="input-group-append">
-				<input type="text" class="form-control @error('place1') border border-danger @enderror" name="place1" placeholder="Find places" value="{{ Request()->place1 ?? '' }}" >
-				@error('place1')
-					<span class="text-danger">
-						<strong> </strong>
-					</span>
-				@enderror
-				<button class="btn btn-primary text-secondary mr-3" type="button" id="secondPlace1">Add</button>
-			</div>
-			<p id="secondPlace">
-				<input type="text" class="form-control" name="place2" placeholder="Find places" value="{{ Request()->place2 ?? '' }}" >		
-				<br>
-				<select class="form-control" id="station_option" name="option">
-					<option value=''>Station option</option>
-						<option value="single" {{ ( Request()->option == "single" ) ? 'selected' : '' }}> 
-							Single Station 
-						</option>   
-						<option value="multiple" {{ ( Request()->option == "multiple" ) ? 'selected' : '' }}> 
-							Multiple Stations 
-						</option>						
-				</select>
-			</p>
-			<br>    
-		</form> -->
 		<form id="planner-form" action="{{ route('search') }}" method="GET">
-   
-                    <select class="form-control @error('start') border border-danger @enderror" id="station_id" name="start">
-                        <option value=''>Starting point</option>
-                        @foreach ($stations as $station)
-                            <option value="{{ json_decode($station)->id }}" {{ ( Request()->start == json_decode($station)->id ) ? 'selected' : ( $fstation == 0) }}> 
-                                {{ $station->name }} 
-                            </option>
-                        @endforeach    
-                    </select>
-					@error('start')
-						<span class="text-danger">
-							<strong> </strong>
-						</span>
-                    @enderror
-					<p></p>
-					<!-- <button onclick="endingPoint()">Add ending point</button> -->
-					<!-- <div id="endingPoint"> -->
-						<select class="form-control" id="station_id2" name="end">
+			 <div class="row justify-content-center">
+				<div class="col-12 col-md-10 col-lg-8">
+					<!--Accordion-->					
+					<div class="input-group-append">
+						<select class="form-control @error('start') border border-danger @enderror" id="station_id" name="start">
+							<option value=''>Starting point</option>
+							@foreach ($stations as $station)
+								<option value="{{ json_decode($station)->id }}" {{ ( Request()->start == json_decode($station)->id ) ? 'selected' : ( $fstation == 0) }}> 
+									{{ $station->name }} 
+								</option>
+							@endforeach    
+						</select>
+						@error('start')
+							<span class="text-danger">
+								<strong> </strong>
+							</span>
+						@enderror
+						<a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
+						&nbsp;&nbsp;&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
+						</a>             
+					</div>
+					<div class="collapse" id="panel-1">
+						<div class="pt-3">
+							<select class="form-control" id="station_id2" name="end">
 							<option value=''>Ending point</option>
 							@foreach ($stations as $station)
 								<option value="{{ json_decode($station)->id }}" {{ ( Request()->end == json_decode($station)->id ) ? 'selected' : ( $fstation == 0) }}> 
 									{{ $station->name }} 
 								</option>
 							@endforeach    
-						</select>
-					<!-- <div>	 -->
-					<p></p>
-					<select class="form-control @error('option') border border-danger @enderror" id="station_option" name="option">
-                        <option value=''>Station option</option>
-						<option value="multiple" {{ ( Request()->option == "multiple" ) ? 'selected' : '' }}> 
-							Multiple Stations 
-						</option>
-                        <option value="single" {{ ( Request()->option == "single" ) ? 'selected' : '' }}> 
-							Single Station 
-						</option>   
-                    </select>
-					@error('option')
-						<span class="text-danger">
-							<strong> </strong>
-						</span>
-                    @enderror
-                    <p></p>
-                    
-                    <div class="input-group-append"><input type="text" class="form-control @error('place1') border border-danger @enderror" name="place1" placeholder="Find places" value="{{ Request()->place1 ?? '' }}" >
-					@error('place1')
-                                    <span class="text-danger">
-                                        <strong> </strong>
-                                    </span>
-                    @enderror
-                    <br>
-                    <input type="text" class="form-control" name="place2" placeholder="Find places" value="{{ Request()->place2 ?? '' }}" >               
-                </form>
+							</select>
+						</div>
+					</div>
+					<br>
+					<div class="input-group-append">
+						<input type="text" class="form-control @error('place1') border border-danger @enderror" name="place1" placeholder="Find a place" value="{{ Request()->place1 ?? '' }}" >
+						@error('place1')
+							<span class="text-danger">
+								<strong> </strong>
+							</span>
+						@enderror
+						<a href="#panel-2" data-target="#panel-2" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
+						&nbsp;&nbsp;&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
+						</a>
+					</div>	
+						<div class="collapse" id="panel-2">
+							<div class="pt-3">
+								<input type="text" class="form-control" name="place2" placeholder="Find another place" value="{{ Request()->place2 ?? '' }}" >
+							</div>
+							<div class="pt-3">
+								<select class="form-control" id="station_option" name="option">
+									<option value=''>Station option</option>
+									<option value="single" {{ ( Request()->option == "single" ) ? 'selected' : '' }}> 
+										Single Station 
+									</option>   
+									<option value="multiple" {{ ( Request()->option == "multiple" ) ? 'selected' : '' }}> 
+										Multiple Stations 
+									</option>
+								</select>
+							</div>
+						</div>
+					</div>					
+					<!--End of Accordion-->
+				</div>
+			</div>                     
+        
 		<button onclick="loading()" class="btn btn-primary text-secondary mr-3" type="submit"><span class="ml-1"><span class="fas fa-search-location"></span></span></button>
-	</div>
+	<br>
+	</form>
 	<br>
 	<section class="min-vh-20 d-flex bg-primary align-items-center">
     	<div class="container">

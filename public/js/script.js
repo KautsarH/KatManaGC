@@ -40,29 +40,7 @@
   //     initMap();
   //     //initAutoComplete();
   //  }
-  $("#endingPoint1").click(function(){
-    $("#endingPoint").toggle();
-});
-  function endingPoint() {
-    var x = document.getElementById("endingPoint");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-  
-  $("#secondPlace1").click(function(){
-    $("#secondPlace").toggle();
-});
-  function endingPoint() {
-    var x = document.getElementById("secondPlace");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
+ 
     
   function myFunction() {
     var obj = JSON.parse(document.getElementById("station_id").value);
