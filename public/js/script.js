@@ -107,16 +107,19 @@
             zoom: 15
           });
           //bounds.extend(pos);
+          keyword = 'train station';
+          currentInfoWindow = infoWindow;
+
+          // Call Places Nearby Search on user's location
+          getNearbyPlaces(pos,keyword);
 
           infoWindow.setPosition(pos);
           infoWindow.setContent('Location found.');
           infoWindow.open(map);
           map.setCenter(pos);
-          keyword = 'train station';
+         
 
-
-          // Call Places Nearby Search on user's location
-          getNearbyPlaces(pos,keyword);
+          
         }, () => {
           // Browser supports geolocation, but user has denied permission
           handleLocationError(true, infoWindow);
@@ -136,7 +139,7 @@
         center: pos,
         zoom: 16.4
       });
-      keyword = 'restaurants'
+      keyword = 'train station'
       // Display an InfoWindow at the map center
       infoWindow.setPosition(pos);
       infoWindow.setContent(browserHasGeolocation ?
@@ -146,15 +149,16 @@
       currentInfoWindow = infoWindow;
 
       // Call Places Nearby Search on the default location
-      //getNearbyPlaces(pos,keyword);
+      getNearbyPlaces(pos,keyword);
     }
 
     // Perform a Places Nearby Search Request
     function getNearbyPlaces(position,keyword) {
+      //document.getElementById("demo").innerHTML ="hel";
       let request = {
         location: position,
         //rankBy: google.maps.places.RankBy.DISTANCE,
-        radius: '200',
+        radius: '300',
         keyword: keyword
       };
 
@@ -171,7 +175,7 @@
 
     // Set markers at the location of each place result
     function createMarkers(places) {
-      document.getElementById("demo").innerHTML =( places.length>1) ? places.length + " places found" : "0 places found";  
+      document.getElementById("demo").innerHTML =( places.length >= 1) ? places.length + " places found" : "0 places found";  
       
       places.forEach(place => {
         let marker = new google.maps.Marker({

@@ -56,7 +56,7 @@ class PlannerController extends Controller
         $end = $request['end'];
             if (($end == '') ? $end =null : ($enIndex = $end - 1));
         $option = $request['option'];
-            //if (($option == '') ? $option =null :);
+            if (($option == '') ? $option ==null : $option = $request['option']);
 
         if($end == null)
         {

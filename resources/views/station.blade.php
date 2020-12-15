@@ -10,16 +10,16 @@
 						Edit
 					</a>
 					<div class="btn btn-danger" onclick="
-										if(confirm('Are you sure want to delete this record?')) {
-											document.getElementById('station-{{ $station->id }}').submit();
-										}
-									">
-										<form id="station-{{ $station->id }}" 
-											action="{{ route('station.destroy', $station) }}" method="POST">
-											@csrf @method('DELETE')
-										</form>
-										{{ __('Delete') }}
-									</div>
+						if(confirm('Are you sure want to delete this record?')) {
+							document.getElementById('station-{{ $station->id }}').submit();
+						}
+					">
+						<form id="station-{{ $station->id }}" 
+							action="{{ route('station.destroy', $station) }}" method="POST">
+							@csrf @method('DELETE')
+						</form>
+						{{ __('Delete') }}
+					</div>
 				</div>
 				<table class="table">
 					<tr>

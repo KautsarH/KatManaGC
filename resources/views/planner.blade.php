@@ -40,7 +40,7 @@
 					</div>
 					<br>
 					<div class="input-group-append">
-						<input type="text" class="form-control @error('place1') border border-danger @enderror" name="place1" placeholder="Find a place" value="{{ Request()->place1 ?? '' }}" >
+						<input type="text" class="form-control @error('place1') border border-danger @enderror" name="place1" placeholder="Where do you want to go?" value="{{ Request()->place1 ?? '' }}" >
 						@error('place1')
 							<span class="text-danger">
 								<strong> </strong>
@@ -52,10 +52,15 @@
 					</div>	
 						<div class="collapse" id="panel-2">
 							<div class="pt-3">
-								<input type="text" class="form-control" name="place2" placeholder="Find another place" value="{{ Request()->place2 ?? '' }}" >
+								<input type="text" class="form-control {{ empty($data['option']) ? '' : '' }}" name="place2" placeholder="Find another place" value="{{ Request()->place2 ?? '' }}" >
+								@error('place2')
+								<span class="text-danger">
+									<strong> </strong>
+								</span>
+								@enderror
 							</div>
 							<div class="pt-3">
-								<select class="form-control" id="station_option" name="option">
+								<select class="form-control {{ $errors->has('place2') ? 'has-error' : '' }}" id="station_option" name="option">
 									<option value=''>Station option</option>
 									<option value="single" {{ ( Request()->option == "single" ) ? 'selected' : '' }}> 
 										Single Station 
@@ -86,7 +91,7 @@
 							<div class="row justify-content-center no-gutters">
 								<div class="col-md-4">
 								@if (!empty($locations[$i]["photos"][0]["photo_reference"]) )
-									<img class="card-img-top" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=100&photoreference={{$locations[$i]["photos"][0]["photo_reference"] }}&key={{env('GOOGLE_PLACES_API_KEY', null)}}" alt="Card image cap">
+									<img class="card-img-top" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=100&photoreference={{$locations[$i]["photos"][0]["photo_reference"] }}&key={{ config('googlemaps.key', null) }}" alt="Card image cap">
 								@else
 									<img class="card-img-top" src="{{ $locations[$i]["icon"] }}" alt="Card image cap">
 								@endif

@@ -30,9 +30,11 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/script.js') }}" defer></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('googlemaps.key', null) }}&libraries=places&callback=initMap"></script>
-    <script src="{{ asset('js/script.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/script.js') }}" defer></script> -->
     <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="128x128" href="{{ asset('images/icons/icon-128x128.png') }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/icons/icon-72x72.png') }}">
