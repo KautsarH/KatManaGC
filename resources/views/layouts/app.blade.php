@@ -26,29 +26,29 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="canonical" href="https://themesberg.com/product/ui-kits/neumorphism-ui/" />
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/main.css') }}" rel="stylesheet">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/script.js') }}" defer></script>
+    <script src="{{ secure_asset('js/app.js') }}" defer></script>
+    <script src="{{ secure_asset('js/script.js') }}" defer></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('googlemaps.key', null) }}&libraries=places&callback=initMap"></script>
-    <!-- <script src="{{ asset('js/script.js') }}" defer></script> -->
+    <!-- <script src="{{ secure_asset('js/script.js') }}" defer></script> -->
     <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="128x128" href="{{ asset('images/icons/icon-128x128.png') }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/icons/icon-72x72.png') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/icons/icon-72x72.png') }}">
-<link rel="manifest" href="{{ asset('img/favicon/site.webmanifest') }}">
-<link rel="mask-icon" href="{{ asset('img/favicon/safari-pinned-tab.svg') }}"  color="#ffffff">
+<link rel="apple-touch-icon" sizes="128x128" href="{{ secure_asset('images/icons/icon-128x128.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ secure_asset('images/icons/icon-72x72.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ secure_asset('images/icons/icon-72x72.png') }}">
+<link rel="manifest" href="{{ secure_asset('img/favicon/site.webmanifest') }}">
+<link rel="mask-icon" href="{{ secure_asset('img/favicon/safari-pinned-tab.svg') }}"  color="#ffffff">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 
 <!-- Fontawesome -->
-<link type="text/css" href="{{ asset('vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+<link type="text/css" href="{{ secure_asset('vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
 <!-- Pixel CSS -->
-<link type="text/css" href="{{ asset('css/neumorphism.css') }}" rel="stylesheet">
+<link type="text/css" href="{{ secure_asset('css/neumorphism.css') }}" rel="stylesheet">
 @laravelPWA
 </head>
 
@@ -56,9 +56,9 @@
 <header class="header-global">
     <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-transparent navbar-theme-primary">
         <div class="container position-relative">
-            <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4" href="{{ asset('/') }}">
-                <img class="navbar-brand-dark" src="{{ asset('images/icons/icon-72x72.png') }}" alt="Logo light">
-                <img class="navbar-brand-light" src="{{ asset('images/icons/icon-72x72.png') }}" alt="Logo dark">
+            <a class="navbar-brand shadow-soft py-2 px-3 rounded border border-light mr-lg-4" href="{{ secure_asset('/') }}">
+                <img class="navbar-brand-dark" src="{{ secure_asset('images/icons/icon-72x72.png') }}" alt="Logo light">
+                <img class="navbar-brand-light" src="{{ secure_asset('images/icons/icon-72x72.png') }}" alt="Logo dark">
                 <span class="ml-2 text-dark">KatMana</span>
             </a>            
             <div class="d-flex align-items-center">
@@ -67,7 +67,7 @@
                         <div class="row">
                             <div class="col-6 collapse-brand">
                                 <a href="{{ url('/') }}" class="navbar-brand shadow-soft py-2 px-3 rounded border border-light">
-                                    <img src="{{ asset('images/icons/icon-72x72.png') }}" alt="Themesberg logo">
+                                    <img src="{{ secure_asset('images/icons/icon-72x72.png') }}" alt="Themesberg logo">
                                 </a>
                             </div>
                             <div class="col-6 collapse-close">
