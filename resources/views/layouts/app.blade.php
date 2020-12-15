@@ -26,14 +26,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="canonical" href="https://themesberg.com/product/ui-kits/neumorphism-ui/" />
 
-    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ secure_asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet" disabled>
+    <link href="{{ secure_asset('css/main.css') }}" rel="stylesheet" disabled>
 
-    <script src="{{ secure_asset('js/app.js') }}" defer></script>
-    <script src="{{ secure_asset('js/script.js') }}" defer></script>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('googlemaps.key', null) }}&libraries=places&callback=initMap"></script>
+   
     <!-- <script src="{{ secure_asset('js/script.js') }}" defer></script> -->
     <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="128x128" href="{{ secure_asset('images/icons/icon-128x128.png') }}">
@@ -45,10 +41,10 @@
 <meta name="theme-color" content="#ffffff">
 
 <!-- Fontawesome -->
-<link type="text/css" href="{{ secure_asset('css/all.min.css') }}" rel="stylesheet">
+<link  type="text/css" href="{{ secure_asset('css/all.min.css') }}" rel="preload" as="style" disabled>
 
 <!-- Pixel CSS -->
-<link type="text/css" href="{{ secure_asset('css/neumorphism.css') }}" rel="stylesheet">
+<link type="text/css" href="{{ secure_asset('css/neumorphism.css') }}" rel="stylesheet" disabled>
 @laravelPWA
 </head>
 
@@ -125,7 +121,11 @@
     
             @yield('content')
      
+    <!-- <script src="{{ secure_asset('js/app.js') }}" defer async></script> -->
+    <script src="{{ secure_asset('js/script.js') }}" defer async></script>
 
+    <script async defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('googlemaps.key', null) }}&libraries=places&callback=initMap"></script>
 </body>
 
 </html>
