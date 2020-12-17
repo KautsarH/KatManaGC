@@ -45,7 +45,7 @@
 <meta name="theme-color" content="#ffffff">
 
 <!-- Fontawesome -->
-<link type="text/css" href="{{ secure_asset('vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+<link type="text/css" href="{{ secure_asset('css/all.min.css') }}" rel="stylesheet">
 
 <!-- Pixel CSS -->
 <link type="text/css" href="{{ secure_asset('css/neumorphism.css') }}" rel="stylesheet">
