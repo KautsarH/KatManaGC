@@ -54,6 +54,21 @@
         border-radius: 10px;
         border: 1px solid black;
       }
+
+      #myTable {
+        height: null;
+        width: 70%;
+        
+        position: relative;
+        z-index: 1;
+        overflow-x: hidden;
+        transition: all .2s ease-out;
+        display: block;
+        margin: 0 auto;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+  
   
       .open {
         width: 50%;
