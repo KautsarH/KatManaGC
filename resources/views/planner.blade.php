@@ -4,6 +4,9 @@
 
 <div class="container text-center">            
 	<div class="form-group">
+	planner
+    Got a place in mind but have no clue where is it?  Find your destination here.
+
 		<form id="planner-form" action="{{ route('search') }}" method="GET">
 			 <div class="row justify-content-center">
 				<div class="col-12 col-md-10 col-lg-8">
