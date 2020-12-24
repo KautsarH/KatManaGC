@@ -17,7 +17,7 @@
                 @endforeach    
             </select>
             <br>
-            <div class="input-group-append"><input type="text" class="form-control" id="keyword" placeholder="Find places" aria-label="Find places" aria-describedby="basic-addon2">
+            <div class="input-group-append"><input type="text" class="form-control" id="keyword" placeholder="Find place Eg: KFC, Gym" aria-label="Find places" aria-describedby="basic-addon2">
         </form>
             <button class="btn btn-primary text-secondary mr-3" type="button"  onclick="myFunction()"><span class="ml-1"><span class="fas fa-search-location"></span></span></button>               
             </div>

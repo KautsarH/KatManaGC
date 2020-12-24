@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container" style="width:80%">
+	<div class="container">
 		<div class="row bg-light">
 			<div class="col p-4">
 				<h3 class="pb-4">Station
@@ -15,7 +15,7 @@
 					<tr>
 						<th>Code</th>
 						<th>Name</th>
-						<th colspan="3">Details</th>
+						<th colspan="3"><center>Details</center></th>
 						<!-- <th>Latitude</th>
 						<th>Longitude</th> -->
 					</tr>
