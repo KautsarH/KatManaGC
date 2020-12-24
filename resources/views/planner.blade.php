@@ -66,10 +66,10 @@
 								<select class="form-control {{ $errors->has('place2') ? 'has-error' : '' }}" id="station_option" name="option">
 									<option value=''>Station option</option>
 									<option value="single" {{ ( Request()->option == "single" ) ? 'selected' : '' }}> 
-										Single Station 
+										Single Station (Find both places in a station)
 									</option>   
 									<option value="multiple" {{ ( Request()->option == "multiple" ) ? 'selected' : '' }}> 
-										Multiple Stations 
+										Multiple Stations (Find the nearest of both places)
 									</option>
 								</select>
 							</div>
