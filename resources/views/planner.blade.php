@@ -26,7 +26,7 @@
 							</span>
 						@enderror
 						<a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
-						&nbsp;&nbsp;&nbsp;<span class="icon">Add ending station<span class="fas fa-plus"></span></span>
+						&nbsp;&nbsp;Add ending station&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
 						</a>             
 					</div>
 					<div class="collapse" id="panel-1">
@@ -50,7 +50,7 @@
 							</span>
 						@enderror
 						<a href="#panel-2" data-target="#panel-2" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
-						&nbsp;&nbsp;&nbsp;<span class="icon">Add another place<span class="fas fa-plus"></span></span>
+						&nbsp;&nbsp;Add another place&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
 						</a>
 					</div>	
 						<div class="collapse" id="panel-2">
