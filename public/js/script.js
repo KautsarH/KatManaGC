@@ -169,7 +169,7 @@
     // Handle the results (up to 20) of the Nearby Search
     function nearbyCallback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
-        document.getElementById("demo").innerHTML =( results.length >= 1) ? results.length + " places found" : "0 places found";  
+        document.getElementById("demo").innerHTML =( results.length >= 1) ? results.length + " places found" : keyword + "0 places found";  
 
         createMarkers(results);
       }
