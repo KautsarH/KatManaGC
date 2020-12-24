@@ -32,6 +32,8 @@
  
  
         <div id="panel"><center>Click marker for place details</center></div>
+        <div id="myTable"></div>
+
     <br>
     
 @endsection

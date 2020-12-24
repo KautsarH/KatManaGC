@@ -12,6 +12,7 @@
     let lng;
     let keyword;
     var timeout;
+    let table;
 
     /*This is an example function and can be disregarded
     This function sets the loading div to a given string.*/
@@ -55,6 +56,7 @@
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
     infoPane = document.getElementById('panel');
+    table = document.getElementById("myTable");
 
     pos = { lat: latitude, lng: longitude };
   
@@ -169,12 +171,68 @@
     // Handle the results (up to 20) of the Nearby Search
     function nearbyCallback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
-        document.getElementById("demo").innerHTML =( results.length >= 1) ? results.length + " places found" : keyword + "0 places found";  
+        document.getElementById("demo").innerHTML =( results.length >= 1) ? results.length + " places found" : "No "+ keyword + " found";  
 
         createMarkers(results);
+        resultTable(results);
       }
     }
 
+    //show list in table
+    function resultTable(places){
+      //get detail each place
+
+      //var body = document.getElementsByTagName('body')[0];
+      var tbl = document.createElement('table');
+      tbl.style.width = '70%';
+      tbl.setAttribute('border', '1');
+      var tr = document.createElement('tr');
+      tbl.appendChild(tr);
+      var th = document.createElement('th');
+      th.appendChild('Image');
+      tr.appendChild(th);
+      var th = document.createElement('th');
+      th.appendChild('Name');
+      tr.appendChild(th);
+      var th = document.createElement('th');
+      th.appendChild('Category');
+      tr.appendChild(th);
+
+      var tr = document.createElement('tr');
+      tbl.appendChild(tr);
+
+      places.forEach(place => {
+        let request = {
+            placeId: place.place_id,
+            fields: ['name', 'formatted_address', 'geometry', 'rating',
+              'website', 'photos']
+          };
+          
+          service.getDetails(request, (placeResult, status) => {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+              
+              var td = document.createElement('td');
+                if (Result.photos) {
+                  let firstPhoto = placeResult.photos[0];
+                  let photo = document.createElement('img');
+                  //photo.classList.add('hero');
+                  photo.src = firstPhoto.getUrl();
+                  td.appendChild(photo);
+                }
+              tr.appendChild(td);
+
+              var td = document.createElement('td');
+              td.appendChild(document.createTextNode(placeResult.name));
+              tr.appendChild(td);
+
+              var td = document.createElement('td');
+              td.appendChild(document.createTextNode(placeResult.name));
+              tr.appendChild(td);
+              
+            }});
+      });    
+   
+    }
     // Set markers at the location of each place result
     function createMarkers(places) {
       
@@ -184,6 +242,8 @@
           map: map,
           title: place.name
         });
+        
+        
 
         /* TODO: Step 4B: Add click listeners to the markers */
         // Add click listener to each marker
