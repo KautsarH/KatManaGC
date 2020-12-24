@@ -169,13 +169,14 @@
     // Handle the results (up to 20) of the Nearby Search
     function nearbyCallback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
+        document.getElementById("demo").innerHTML =( results.length >= 1) ? results.length + " places found" : "0 places found";  
+
         createMarkers(results);
       }
     }
 
     // Set markers at the location of each place result
     function createMarkers(places) {
-      document.getElementById("demo").innerHTML =( places.length >= 1) ? places.length + " places found" : "0 places found";  
       
       places.forEach(place => {
         let marker = new google.maps.Marker({
