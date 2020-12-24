@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<div class="row bg-white">
+		<div class="row bg-light">
 			<div class="col p-5">
 				<h3 class="pb-4">Station
 					<a href="{{ route('station.create') }}" 

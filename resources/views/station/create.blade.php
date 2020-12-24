@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="container">
-		<div class="row bg-white">
+		<div class="row bg-light">
 			<div class="col p-5">
 				<h3>{{ __('Station Details') }}</h3>
 				<form id="location-form" action="{{ route('station.store') }}" method="POST">

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<br>
 <section class="min-vh-20 d-flex bg-primary align-items-center">
             <div class="container">
                 <div class="row justify-content-center">
