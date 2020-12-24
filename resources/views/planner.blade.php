@@ -26,7 +26,7 @@
 							</span>
 						@enderror
 						<a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
-						&nbsp;&nbsp;&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
+						&nbsp;&nbsp;&nbsp;<span class="icon">Add ending station<span class="fas fa-plus"></span></span>
 						</a>             
 					</div>
 					<div class="collapse" id="panel-1">
@@ -43,14 +43,14 @@
 					</div>
 					<br>
 					<div class="input-group-append">
-						<input type="text" class="form-control @error('place1') border border-danger @enderror" name="place1" placeholder="Where do you want to go?" value="{{ Request()->place1 ?? '' }}" >
+						<input type="text" class="form-control @error('place1') border border-danger @enderror" name="place1" placeholder="Where do you want to go? Ed: KFC, Post Office" value="{{ Request()->place1 ?? '' }}" >
 						@error('place1')
 							<span class="text-danger">
 								<strong> </strong>
 							</span>
 						@enderror
 						<a href="#panel-2" data-target="#panel-2" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
-						&nbsp;&nbsp;&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
+						&nbsp;&nbsp;&nbsp;<span class="icon">Add another place<span class="fas fa-plus"></span></span>
 						</a>
 					</div>	
 						<div class="collapse" id="panel-2">
