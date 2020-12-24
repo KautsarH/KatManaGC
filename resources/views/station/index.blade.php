@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container">
+	<div class="container" style="width:80%">
 		<div class="row bg-light">
-			<div class="col p-5">
+			<div class="col p-4">
 				<h3 class="pb-4">Station
 					<a href="{{ route('station.create') }}" 
 						class="float-right btn btn-success">
