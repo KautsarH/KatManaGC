@@ -4,9 +4,9 @@
 
 <div class="container text-center">            
 	<div class="form-group">
-	<h3>Station Details</h3>
+	<h3><b>Journey Planner</b></h3>
     Got a place in mind but have no clue where is it? Plan your journey here.
-
+	<br> <br>
 		<form id="planner-form" action="{{ route('search') }}" method="GET">
 			 <div class="row justify-content-center">
 				<div class="col-12 col-md-10 col-lg-8">
@@ -43,7 +43,7 @@
 					</div>
 					<br>
 					<div class="input-group-append">
-						<input type="text" class="form-control @error('place1') border border-danger @enderror" name="place1" placeholder="Where do you want to go? Ed: KFC, Post Office" value="{{ Request()->place1 ?? '' }}" >
+						<input type="text" class="form-control @error('place1') border border-danger @enderror" name="place1" placeholder="Where do you want to go? Eg: KFC, Post Office" value="{{ Request()->place1 ?? '' }}" >
 						@error('place1')
 							<span class="text-danger">
 								<strong> </strong>
@@ -55,7 +55,7 @@
 					</div>	
 						<div class="collapse" id="panel-2">
 							<div class="pt-3">
-								<input type="text" class="form-control {{ empty($data['option']) ? '' : '' }}" name="place2" placeholder="Find another place" value="{{ Request()->place2 ?? '' }}" >
+								<input type="text" class="form-control {{ empty($data['option']) ? '' : '' }}" name="place2" placeholder="Find another place. Eg: Gym, Mosque" value="{{ Request()->place2 ?? '' }}" >
 								@error('place2')
 								<span class="text-danger">
 									<strong> </strong>

@@ -4,9 +4,9 @@
 
 <div class="container text-center">           
     <div class="form-group">
-    <h3>Nearby</h3>
-    You're on a station and looking for a specific place to visit? Find it here.
-    <br>
+    <h3><b>Nearby</b></h3>
+    You're on a station and looking for a specific place? Find it here.
+    <br><br>
         <form>   
             <select class="form-control" id="station_id">
                 <option>Select Station</option>
