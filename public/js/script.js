@@ -12,7 +12,7 @@
     let lng;
     let keyword;
     var timeout;
-    let table;
+    let tbl;
 
     /*This is an example function and can be disregarded
     This function sets the loading div to a given string.*/
@@ -56,7 +56,7 @@
     infoWindow = new google.maps.InfoWindow;
     currentInfoWindow = infoWindow;
     infoPane = document.getElementById('panel');
-    table = document.getElementById("myTable");
+    tbl = document.getElementById("myTable");
 
     pos = { lat: latitude, lng: longitude };
   
