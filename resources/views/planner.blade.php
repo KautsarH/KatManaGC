@@ -5,7 +5,7 @@
 <div class="container text-center">            
 	<div class="form-group">
 	<h3><b>Journey Planner</b></h3>
-    Got a place in mind but have no clue where is it? Plan your journey here.
+    Got a place in mind but have no clue where the place is? Plan your journey here.
 	<br> <br>
 		<form id="planner-form" action="{{ route('search') }}" method="GET">
 			 <div class="row justify-content-center">

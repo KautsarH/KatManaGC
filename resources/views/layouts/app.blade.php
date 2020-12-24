@@ -119,7 +119,7 @@
     </nav>
 </header>
         
-    <section class="section section bg-soft pb-5 overflow-hidden z-1">
+    <section class="section section bg-soft pb-5 overflow-hidden z-2">
      
 </section>
     
