@@ -4,9 +4,9 @@
 
 <div class="container text-center">           
     <div class="form-group">
-    nearby
-    Find nearby place based on your desired station.
-    
+    <h3>Station Details</h3>
+    You're on a station and looking for a place to visit? Find it here.
+
         <form>   
             <select class="form-control" id="station_id">
                 <option>Select Station</option>

@@ -181,7 +181,7 @@
     //show list in table
     function resultTable(places){
       //get detail each place
-
+      document.getElementById("myTable").innerHTML = "Hello";
       //var body = document.getElementsByTagName('body')[0];
       var tbl = document.createElement('table');
       tbl.style.width = '70%';
