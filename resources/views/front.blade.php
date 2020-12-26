@@ -4,7 +4,7 @@
 
 <div class="container text-center">           
     <div class="form-group">
-    <h3><b>Nearby</b></h3>
+    <h3><b>Nearby <i class="fa fa-search" aria-hidden="true"></i></b></h3>
     You're on a station and looking for a specific place? Find it here.
     <br><br>
         <form>   
