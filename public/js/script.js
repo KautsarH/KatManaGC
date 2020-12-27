@@ -172,7 +172,7 @@
     function nearbyCallback(results, status, keyword) {
       if (results.length == 0)
         {
-          document.getElementById("demo").innerHTML = keyword.text +"Place not found";
+          document.getElementById("demo").innerHTML = request.keyword +"Place not found";
         }
         
       if (status == google.maps.places.PlacesServiceStatus.OK) {
