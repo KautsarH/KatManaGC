@@ -8,7 +8,7 @@
                     <div class="col-12 col-md-8 col-lg-6 justify-content-center">
                         <div class="card bg-primary shadow-soft border-light p-4">
                             <div class="card-header text-center pb-0">
-                                <h2 class="h4">Admin</h2>  
+                                <h3>Admin</h3>  
                             </div>
                             <div class="card-body">
                                 <form method="POST" action="{{ route('login') }}"  class="mt-4">
