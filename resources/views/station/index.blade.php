@@ -29,7 +29,7 @@
 							<!-- <td>{{ $station->lat }}</td>
 							<td>{{ $station->lng }}</td> -->
 							<td>
-								<div class="btn-group"><center>
+								<!-- <div class="btn-group"><center> -->
 									<a href="{{ route('station.show',$station) }}" class="btn btn-primary">
 									<span class="ml-1"><span class="fas fa-info"></span></span>
 									</a>
@@ -47,7 +47,7 @@
 										</form>
 										<span class="ml-1"><span class="fas fa-trash"></span></span>
 									</div></center>
-								</div>
+								<!-- </div> -->
 							</td>
 						</tr>
 					@endforeach
