@@ -118,10 +118,10 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    background-clip: text;
+    /* background-clip: text;
     background: -webkit-linear-gradient( #ea4c89, #333);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
