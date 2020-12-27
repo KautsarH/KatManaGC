@@ -165,13 +165,15 @@
       };
 
       service = new google.maps.places.PlacesService(map);
+      document.getElementById("demo").innerHTML =( results.length >= 1) ? results.length + " places found" : "No "+ keyword + " found";  
+
       service.nearbySearch(request, nearbyCallback);
     }
 
     // Handle the results (up to 20) of the Nearby Search
     function nearbyCallback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
-        document.getElementById("demo").innerHTML =( results.length >= 1) ? results.length + " places found" : "No "+ keyword + " found";  
+        //document.getElementById("demo").innerHTML =( results.length >= 1) ? results.length + " places found" : "No "+ keyword + " found";  
 
         createMarkers(results);
         resultTable(results);
