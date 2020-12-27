@@ -188,55 +188,27 @@
     function resultTable(places){
       //get detail each place
       document.getElementById("myTable").innerHTML = "Hello";
-      //var body = document.getElementsByTagName('body')[0];
-      var tbl = document.createElement('table');
-      tbl.style.width = '70%';
-      tbl.setAttribute('border', '1');
-      var tr = document.createElement('tr');
-      tbl.appendChild(tr);
-      var th = document.createElement('th');
-      th.appendChild('Image');
-      tr.appendChild(th);
-      var th = document.createElement('th');
-      th.appendChild('Name');
-      tr.appendChild(th);
-      var th = document.createElement('th');
-      th.appendChild('Category');
-      tr.appendChild(th);
+      var body = document.body,
+        tbl  = document.createElement('table');
+    tbl.style.width  = '100px';
+    tbl.style.border = '1px solid black';
 
-      var tr = document.createElement('tr');
-      tbl.appendChild(tr);
-
-      places.forEach(place => {
-        let request = {
-            placeId: place.place_id,
-            fields: ['name', 'formatted_address', 'geometry', 'rating',
-              'website', 'photos']
-          };
-          
-          service.getDetails(request, (placeResult, status) => {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
-              
-              var td = document.createElement('td');
-                if (Result.photos) {
-                  let firstPhoto = placeResult.photos[0];
-                  let photo = document.createElement('img');
-                  //photo.classList.add('hero');
-                  photo.src = firstPhoto.getUrl();
-                  td.appendChild(photo);
+    for(var i = 0; i < 3; i++){
+        var tr = tbl.insertRow();
+        for(var j = 0; j < 2; j++){
+            if(i == 2 && j == 1){
+                break;
+            } else {
+                var td = tr.insertCell();
+                td.appendChild(document.createTextNode('Cell'));
+                td.style.border = '1px solid black';
+                if(i == 1 && j == 1){
+                    td.setAttribute('rowSpan', '2');
                 }
-              tr.appendChild(td);
-
-              var td = document.createElement('td');
-              td.appendChild(document.createTextNode(placeResult.name));
-              tr.appendChild(td);
-
-              var td = document.createElement('td');
-              td.appendChild(document.createTextNode(placeResult.name));
-              tr.appendChild(td);
-              
-            }});
-      });    
+            }
+        }
+    }
+    body.appendChild(tbl);
    
     }
     // Set markers at the location of each place result
