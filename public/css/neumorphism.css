@@ -103,7 +103,7 @@ body {
     text-align: left;
     /* background-color:#D1D9E6;  */
     background: rgb(209,217,230);
-    background: linear-gradient(180deg, rgba(209,217,230,1) 0%, rgba(177,188,206,1) 50%, rgba(147,165,190,1) 100%);
+    background: linear-gradient(180deg, rgba(209,217,230,1) 54%, rgba(186,192,201,1) 100%); 
     /* #e6e7ee */
 }
 
@@ -21889,7 +21889,8 @@ button.section-slack:focus {
 }
 
 .shadow-soft {
-    box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff !important;
+    /* box-shadow: 6px 6px 12px #b8b9be, -6px -6px 12px #ffffff !important; */
+    box-shadow:5px 5px 6px #b4bbc6, -5px -5px 6px #eef7ff;
 }
 
 .shadow-inset {
