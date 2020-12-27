@@ -11,14 +11,12 @@
 					</a>
 				</h3>
 				
-				<table class="table">
+				<table class="table" border="1">
 					<tr>
 						<th>Code</th>
 						<th>Name</th>
 						<th>Status</th>
-						<th colspan="2"><center>Details</center></th>
-						<!-- <th>Latitude</th>
-						<th>Longitude</th> -->
+						<th><center>Details</center></th>
 					</tr>
 
 					@foreach($stations as $station)
