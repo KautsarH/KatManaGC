@@ -169,15 +169,15 @@
     }
 
     // Handle the results (up to 20) of the Nearby Search
-    function nearbyCallback(results, status) {
+    function nearbyCallback(results, status, keyword) {
       if (results.length == 0)
         {
-          document.getElementById("demo").innerHTML = "Not found";
+          document.getElementById("demo").innerHTML = keyword +"Place not found";
         }
         
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         
-        document.getElementById("demo").innerHTML =( results.length >= 1) ? results.length + " places found" : "No "+ keyword + " found";  
+        document.getElementById("demo").innerHTML = results.length + " places found";  
 
         createMarkers(results);
         resultTable(results);
