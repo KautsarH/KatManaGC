@@ -31,7 +31,7 @@ class PlannerController extends Controller
     }
 
     public function search(Request $request)
-    {    
+    {    //php artisan tinker, dd()
 
         $this->validate($request, [
             'place1' => 'required',
@@ -69,13 +69,17 @@ class PlannerController extends Controller
                     $lng = $stations[$i]->lng;
                     $location = $lat. "," .$lng;
                     //dd($location);
+
+                    //list of places nearby the station
                     $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
-                    //dd($response["results"]);
+
+                    //write_log(dd($response["results"]));
                     if(!empty($response["results"]) && count($response["results"]) > 0 )
                     {
                         $data = $response["results"];
                         //dd($response["results"]);
 
+                        //collect data associated with each places & store data in $data and collected in $locations collection
                         $locations = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
                             
                             // Add the new property in every places
@@ -83,6 +87,8 @@ class PlannerController extends Controller
                             $tempLng = $data['geometry']['location']['lng'];
                             $tempLocation = $tempLat. "," .$tempLng;
                             //dd($tempLocation);
+
+                            //find distance and duration of each place from the station
                             $distancematrix = json_decode(\GoogleMaps::load('distancematrix')->setParam (['origins' => $location, 'destinations' => $tempLocation, 'mode' => 'walking'])->get(),true);
                             $distance = $distancematrix['rows'][0]['elements'][0]['distance']['text'];
                             $duration = $distancematrix['rows'][0]['elements'][0]['duration']['text'];
@@ -114,6 +120,7 @@ class PlannerController extends Controller
                         {
                             $data = $response["results"];
 
+                            //collect data associated with each places & store data in $data and will be collected in $unmerge collection
                             $unmerge = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
 
                                 //Find distance & duration
@@ -136,6 +143,7 @@ class PlannerController extends Controller
                             
                             });
 
+                            //merge $unmerge & $locations
                             $locations = $locations->merge($unmerge);
 
                             //$locations->put('index', $i);
@@ -161,16 +169,21 @@ class PlannerController extends Controller
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
                         //dd($location);
-                        $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
-                        $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
-                        
-                        if( count($response["results"]) > 0 && count($response2["results"]) > 0)
-                        {
-                            $data = $response["results"]->merge($response2["results"]);
-                            // dd($data);
-                            //$data = $response["results"];
 
-                            $unmerge = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
+                        $keyword2 = array('keyword' => [$place,$place2]);
+
+                        // $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
+                        // $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
+
+                        $response2 = json_decode(\GoogleMaps::load('nearbysearch')->setParam (['location' => $location, 'radius' => $tempLocation, $keyword2])->get(),true);
+                        
+                        if(  count($response2["results"]) > 0)
+                        {
+                           // $data = $response["results"]->merge($response2["results"]);
+                            // dd($data);
+                            $data = $response2["results"];
+
+                            $locations = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
 
                                 //Find distance & duration
                                 $tempLat = $data['geometry']['location']['lat'];
@@ -191,7 +204,7 @@ class PlannerController extends Controller
                                 return $data;
                             
                             });
-                            $locations = $locations->merge($unmerge);
+                            //$locations = $locations->merge($unmerge);
                         break;
                         }
                             
@@ -204,14 +217,17 @@ class PlannerController extends Controller
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
                         //dd($location);
-                        $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
-                        $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
-                        
-                        if( count($response["results"]) > 0 && count($response2["results"]) > 0)
+                       
+                        // $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
+                        // $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
+
+                        $response2 = json_decode(\GoogleMaps::load('nearbysearch')->setParam (['location' => $location, 'radius' => $tempLocation, $keyword2])->get(),true);
+
+                        if(  count($response2["results"]) > 0)
                         {
-                            $data = $response["results"]->merge($response2["results"]);
+                            //$data = $response["results"]->merge($response2["results"]);
                             // dd($data);
-                            //$data = $response["results"];
+                            $data = $response2["results"];
 
                             $unmerge = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
 
@@ -802,7 +818,7 @@ class PlannerController extends Controller
 
             }
         }
-//////////////////////////////////////
+        //////////////////////////////////////
         //making sure all the request has input
         // if($request->has('place1') && $request->has('start') && $request->has('option'))
         // {
