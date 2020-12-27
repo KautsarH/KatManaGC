@@ -11,23 +11,23 @@
 					</a>
 				</h3>
 				
-				<table class="table" border="1">
+				<table class="table">
 					<tr>
 						<th>Code</th>
 						<th>Name</th>
-						<th>Status</th>
-						<th><center>Details</center></th>
+						<th colspan="3">Details</th>
+						<!-- <th>Latitude</th>
+						<th>Longitude</th> -->
 					</tr>
 
 					@foreach($stations as $station)
 						<tr>
 							<td>{{ $station->code }}</td>
 							<td>{{ $station->name }}</td>
-							<td>{{ $station->status }}</td>
 							<!-- <td>{{ $station->lat }}</td>
 							<td>{{ $station->lng }}</td> -->
 							<td>
-								<!-- <div class="btn-group"><center> -->
+								<div class="btn-group">
 									<a href="{{ route('station.show',$station) }}" class="btn btn-primary">
 									<span class="ml-1"><span class="fas fa-info"></span></span>
 									</a>
@@ -44,8 +44,8 @@
 											@csrf @method('DELETE')
 										</form>
 										<span class="ml-1"><span class="fas fa-trash"></span></span>
-									</div></center>
-								<!-- </div> -->
+									</div>
+								</div>
 							</td>
 						</tr>
 					@endforeach
