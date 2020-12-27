@@ -170,7 +170,7 @@ class PlannerController extends Controller
                         $location = $lat. "," .$lng;
                         //dd($location);
 
-                        $keyword2 = array('keyword' => [$place,$place2]);
+                        $keyword2 = array('keyword' => $place . "and". $place2);
 
                         // $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
                         // $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
@@ -217,6 +217,7 @@ class PlannerController extends Controller
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
                         //dd($location);
+                        $keyword2 = array('keyword' => $place . "and". $place2);
                        
                         // $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
                         // $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
