@@ -62,6 +62,7 @@ class PlannerController extends Controller
         {
             if ($place2 == null)
             {
+                
                 //search forward
                 for($i=$stIndex; $i< count($stations); $i++)
                 {
@@ -169,19 +170,15 @@ class PlannerController extends Controller
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
                         //dd($location);
-
-                        $keyword2 = array('keyword' => $place . "and". $place2);
-
-                        // $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
-                        // $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
-
-                        $response2 = json_decode(\GoogleMaps::load('nearbysearch')->setParam (['location' => $location, 'radius' => $radius, $keyword2])->get(),true);
                         
-                        if(  count($response2["results"]) > 0)
+                        $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
+                        $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
+                        
+                        if( count($response["results"]) > 0 && count($response2["results"]) > 0)
                         {
-                           // $data = $response["results"]->merge($response2["results"]);
+                            $data = $response["results"]->merge($response2["results"]);
                             // dd($data);
-                            $data = $response2["results"];
+                            //$data = $response["results"];
 
                             $locations = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
 
@@ -217,18 +214,14 @@ class PlannerController extends Controller
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
                         //dd($location);
-                        $keyword2 = array('keyword' => $place . "and". $place2);
-                       
-                        // $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
-                        // $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
-
-                        $response2 = json_decode(\GoogleMaps::load('nearbysearch')->setParam (['location' => $location, 'radius' => $radius, $keyword2])->get(),true);
-
-                        if(  count($response2["results"]) > 0)
+                        $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
+                        $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
+                        
+                        if( count($response["results"]) > 0 && count($response2["results"]) > 0)
                         {
-                            //$data = $response["results"]->merge($response2["results"]);
+                            $data = $response["results"]->merge($response2["results"]);
                             // dd($data);
-                            $data = $response2["results"];
+                            //$data = $response["results"];
 
                             $unmerge = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
 
