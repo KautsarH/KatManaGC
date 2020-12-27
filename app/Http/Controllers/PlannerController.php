@@ -175,7 +175,7 @@ class PlannerController extends Controller
                         // $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
                         // $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
 
-                        $response2 = json_decode(\GoogleMaps::load('nearbysearch')->setParam (['location' => $location, 'radius' => $tempLocation, $keyword2])->get(),true);
+                        $response2 = json_decode(\GoogleMaps::load('nearbysearch')->setParam (['location' => $location, 'radius' => $radius, $keyword2])->get(),true);
                         
                         if(  count($response2["results"]) > 0)
                         {
@@ -221,7 +221,7 @@ class PlannerController extends Controller
                         // $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
                         // $response2 = GooglePlaces::nearbySearch($location, $radius,$keyword2);
 
-                        $response2 = json_decode(\GoogleMaps::load('nearbysearch')->setParam (['location' => $location, 'radius' => $tempLocation, $keyword2])->get(),true);
+                        $response2 = json_decode(\GoogleMaps::load('nearbysearch')->setParam (['location' => $location, 'radius' => $radius, $keyword2])->get(),true);
 
                         if(  count($response2["results"]) > 0)
                         {
