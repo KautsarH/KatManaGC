@@ -16,7 +16,7 @@
 						<th>Code</th>
 						<th>Name</th>
 						<th>Status</th>
-						<th colspan="3"><center>Details</center></th>
+						<th colspan="2"><center>Details</center></th>
 						<!-- <th>Latitude</th>
 						<th>Longitude</th> -->
 					</tr>
