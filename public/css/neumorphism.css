@@ -102,8 +102,8 @@ body {
     color: #44476A;
     text-align: left;
     /* background-color:#D1D9E6;  */
-    background: rgb(209,217,230);
-    background: linear-gradient(90deg, rgba(209,217,230,1) 0%, rgba(177,188,206,1) 35%, rgba(147,165,190,1) 100%);
+    background: rgb(238,174,202);
+    background: linear-gradient(4deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     /* #e6e7ee */
 }
 
@@ -9487,7 +9487,8 @@ button.bg-neutral:focus {
 }
 
 .bg-soft {
-    background-color: #D1D9E6 !important;
+    background-color: transparent;
+    /* background-color: #D1D9E6 !important; */
 }
 
 a.bg-soft:hover, a.bg-soft:focus,
