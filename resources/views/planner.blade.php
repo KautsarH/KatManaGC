@@ -4,7 +4,7 @@
 
 <div class="container text-center">            
 	<div class="form-group">
-	<h3><b>Journey Planner <i class="fa fa-map" aria-hidden="true"></i></b></h3>
+	<h3><b><i class="fa fa-map" aria-hidden="true"> | Journey Planner </i></b></h3>
     Got a place in mind but have no clue where the place is? Plan your journey here.
 	<br> <br>
 		<form id="planner-form" action="{{ route('search') }}" method="GET">
@@ -109,7 +109,7 @@
 											@else
 												({{$locations[$i]["diff"] }} stations) 
 											@endif</p>
-										<p class="card-text"><a href="http://www.google.com/maps/dir/?api=1&origin=LRT+{{$stations[$locations[$i]["index"]]->name}}&destination={{$locations[$i]["name"]}}&travelmode=walking" class="btn btn-primary" target="_blank">Google Map</a></p>
+										<p class="card-text"><a href="http://www.google.com/maps/dir/?api=1&origin=LRT+{{$stations[$locations[$i]["index"]]->name}}&destination={{$locations[$i]["place_id"]}}&travelmode=walking" class="btn btn-primary" target="_blank">Google Map <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
 										<!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 									</div>
 								</div>
