@@ -109,7 +109,7 @@
 											@else
 												({{$locations[$i]["diff"] }} stations) 
 											@endif</p>
-										<p class="card-text"><a href="http://www.google.com/maps/dir/?api=1&origin=LRT+{{$stations[$locations[$i]["index"]]->name}}&destination_place_id={{$locations[$i]["place_id"]}}&travelmode=walking" class="btn btn-primary" target="_blank">Google Map <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
+										<p class="card-text"><a href="http://www.google.com/maps/dir/?api=1&origin=LRT+{{$stations[$locations[$i]["index"]]->name}}&destination={{$locations[$i]["name"]}}&destination_place_id={{$locations[$i]["place_id"]}}&travelmode=walking" class="btn btn-primary" target="_blank">Google Map <i class="fa fa-external-link" aria-hidden="true"></i></a></p>
 										<!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 									</div>
 								</div>
