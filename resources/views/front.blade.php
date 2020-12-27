@@ -36,7 +36,7 @@
  
         <div id="panel"><center>Click marker for place details</center></div>
 
-        <center><div id="myTable"></div></center>
+        <!-- <center><div id="myTable"></div></center> -->
 
     <br>
     

@@ -180,7 +180,7 @@
         document.getElementById("demo").innerHTML = results.length + " places found";  
 
         createMarkers(results);
-        resultTable(results);
+        //resultTable(results);
       }
     }
 
@@ -227,56 +227,56 @@
                 
             }
         
-        body.appendChild(tbl);
-      //var body = document.getElementsByTagName('body')[0];
-      var tbl = document.createElement('table');
-      tbl.style.width = '70%';
-      tbl.setAttribute('border', '1');
-      var tr = document.createElement('tr');
-      tbl.appendChild(tr);
+      //   body.appendChild(tbl);
+      // //var body = document.getElementsByTagName('body')[0];
+      // var tbl = document.createElement('table');
+      // tbl.style.width = '70%';
+      // tbl.setAttribute('border', '1');
+      // var tr = document.createElement('tr');
+      // tbl.appendChild(tr);
+      // // var th = document.createElement('th');
+      // // th.appendChild('Image');
+      // tr.appendChild(th);
       // var th = document.createElement('th');
-      // th.appendChild('Image');
-      tr.appendChild(th);
-      var th = document.createElement('th');
-      th.appendChild('Name');
-      tr.appendChild(th);
-      var th = document.createElement('th');
-      th.appendChild('Category');
-      tr.appendChild(th);
+      // th.appendChild('Name');
+      // tr.appendChild(th);
+      // var th = document.createElement('th');
+      // th.appendChild('Category');
+      // tr.appendChild(th);
 
-      var tr = document.createElement('tr');
-      tbl.appendChild(tr);
+      // var tr = document.createElement('tr');
+      // tbl.appendChild(tr);
 
-      places.forEach(place => {
-        let request = {
-            placeId: place.place_id,
-            fields: ['name', 'formatted_address', 'geometry', 'rating',
-              'website', 'photos']
-          };
+      // places.forEach(place => {
+      //   let request = {
+      //       placeId: place.place_id,
+      //       fields: ['name', 'formatted_address', 'geometry', 'rating',
+      //         'website', 'photos']
+      //     };
           
-          service.getDetails(request, (placeResult, status) => {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
+      //     service.getDetails(request, (placeResult, status) => {
+      //       if (status == google.maps.places.PlacesServiceStatus.OK) {
               
-              // var td = document.createElement('td');
-              //   if (Result.photos) {
-              //     let firstPhoto = placeResult.photos[0];
-              //     let photo = document.createElement('img');
-              //     //photo.classList.add('hero');
-              //     photo.src = firstPhoto.getUrl();
-              //     td.appendChild(photo);
-              //   }
-              // tr.appendChild(td);
+      //         // var td = document.createElement('td');
+      //         //   if (Result.photos) {
+      //         //     let firstPhoto = placeResult.photos[0];
+      //         //     let photo = document.createElement('img');
+      //         //     //photo.classList.add('hero');
+      //         //     photo.src = firstPhoto.getUrl();
+      //         //     td.appendChild(photo);
+      //         //   }
+      //         // tr.appendChild(td);
 
-              var td = document.createElement('td');
-              td.appendChild(document.createTextNode(placeResult.name));
-              tr.appendChild(td);
+      //         var td = document.createElement('td');
+      //         td.appendChild(document.createTextNode(placeResult.name));
+      //         tr.appendChild(td);
 
-              var td = document.createElement('td');
-              td.appendChild(document.createTextNode(placeResult.name));
-              tr.appendChild(td);
+      //         var td = document.createElement('td');
+      //         td.appendChild(document.createTextNode(placeResult.name));
+      //         tr.appendChild(td);
               
-            }});
-      });    
+      //       }});
+      // });    
    
     }
     // Set markers at the location of each place result
