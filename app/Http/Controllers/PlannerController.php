@@ -17,8 +17,9 @@ class PlannerController extends Controller
 
     public function index()
     {   
+        //$stations = \App\Station::orderBy('id')->get();
         
-        $stations = \App\Station::where('status', 'active')->get();
+        $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
 
         //     if ($result->isNotEmpty()) {
         //         $locations  = $locations->concat(collect($result));  //use merge or concat
@@ -42,11 +43,11 @@ class PlannerController extends Controller
 
 
         //get stations
-        $numstation = count(\App\Station::all());
-        $inactivedb = \App\Station::where('status', 'inactive')->pluck('id');
+        $numstation = count(\App\Station::orderBy('id')->get());
+        $inactivedb = \App\Station::where('status', 'inactive')->orderBy('id')->pluck('id');
         $inactive = (array)$inactivedb;
-        $stations = \App\Station::where('status', 'active')->get();
-        $fstation = \App\Station::where('status', 'active')->first()->id;
+        $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
+        $fstation = \App\Station::where('status', 'active')->orderBy('id')->first()->id;
         $radius = 10;
         $locations = new Collection;
 
