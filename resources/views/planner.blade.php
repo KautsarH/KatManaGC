@@ -27,7 +27,8 @@
 						@enderror
 						<a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
 						&nbsp;&nbsp;<i class="fa fa-subway" aria-hidden="true" id="tooltip" rel="tooltip" data-original-title="Add ending point"></i>&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
-						</a>             
+						</a>  
+						<a id="tooltip" rel="tooltip" data-original-title="Just other tool tip data">with other tips about</a           
 					</div>
 					<div class="collapse" id="panel-1">
 						<div class="pt-3">
