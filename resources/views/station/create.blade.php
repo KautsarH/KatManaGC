@@ -56,7 +56,6 @@
 							<th></th>
 							<td>
 								<center><input id="submit" type="button" value="Geocode" onclick="geocode()"/></center>
-								<div id="geocode"> </div>
 							</td>
 						</tr>
 						<tr>
@@ -85,4 +84,6 @@
 			</div>
 		</div>
 	</div>
+	<div id="geocode"> </div>
+
 @endsection
