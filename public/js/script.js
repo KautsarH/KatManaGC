@@ -14,6 +14,11 @@
     var timeout;
     let tbl;
 
+    function run()
+    {
+      initMap();
+      geocode();
+    }
     /*This is an example function and can be disregarded
     This function sets the loading div to a given string.*/
     
