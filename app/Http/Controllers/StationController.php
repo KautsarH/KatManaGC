@@ -119,9 +119,9 @@ class StationController extends Controller
     {
 
         // $stations = \App\Station::pluck('name', 'id');
-        $stations = \App\Station::where('status', 'active')->get();
+        $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
         //dd($stations);
-        $fstation = \App\Station::where('status', 'active')->first()->id;
+        $fstation = \App\Station::where('status', 'active')->orderBy('id')->first()->id;
        // $id = 2;
 
         // return view('front', compact('id', 'stations'));
