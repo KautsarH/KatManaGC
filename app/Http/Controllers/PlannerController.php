@@ -72,7 +72,7 @@ class PlannerController extends Controller
 
                     //dd(gettype($inactive));
                     //skip inactive stations
-                    dd($inactive);
+                    //dd($inactive);
                     if (in_array($i, $inactive)) {
                         continue;
                     }
@@ -229,6 +229,10 @@ class PlannerController extends Controller
                     //backward
                     for($i=$stIndex-1; $i >= 0; $i--)
                     {
+                        if (in_array($i, $inactive)) {
+                            continue;
+                        }
+
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
@@ -274,8 +278,12 @@ class PlannerController extends Controller
                 else // multiple option
                 {
                     //place 1 forward
-                    for($i=$stIndex; $i< count($stations); $i++)
+                    for($i=$stIndex; $i< $numstation; $i++)
                     {
+                        if (in_array($i, $inactive)) {
+                            continue;
+                        }
+
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
@@ -317,6 +325,10 @@ class PlannerController extends Controller
                     //place 1 backward
                     for($i=$stIndex-1; $i >= 0; $i--)
                     {
+                        if (in_array($i, $inactive)) {
+                            continue;
+                        }
+
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
@@ -361,8 +373,12 @@ class PlannerController extends Controller
                     }
 
                     //place 2 forward
-                    for($i=$stIndex; $i< count($stations); $i++)
+                    for($i=$stIndex; $i< $numstation; $i++)
                     {
+                        if (in_array($i, $inactive)) {
+                            continue;
+                        }
+
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
@@ -407,6 +423,10 @@ class PlannerController extends Controller
                     //place 2 backward
                     for($i=$stIndex-1; $i >= 0; $i--)
                     {
+                        if (in_array($i, $inactive)) {
+                            continue;
+                        }
+
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
@@ -457,6 +477,10 @@ class PlannerController extends Controller
                 {
                     for($i=$stIndex; $i <= $enIndex; $i++)
                     {
+                        if (in_array($i, $inactive)) {
+                            continue;
+                        }
+
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
@@ -502,6 +526,10 @@ class PlannerController extends Controller
                 {
                     for($i=$stIndex; $i >= $enIndex; $i--)
                     {
+                        if (in_array($i, $inactive)) {
+                            continue;
+                        }
+
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
@@ -552,6 +580,10 @@ class PlannerController extends Controller
                     {
                         for($i=$stIndex; $i<= $enIndex; $i++)
                         {
+                            if (in_array($i, $inactive)) {
+                                continue;
+                            }
+
                             $lat = $stations[$i]->lat;
                             $lng = $stations[$i]->lng;
                             $location = $lat. "," .$lng;
@@ -600,6 +632,10 @@ class PlannerController extends Controller
                     {
                         for($i=$stIndex; $i >= $enIndex; $i--)
                         {
+                            if (in_array($i, $inactive)) {
+                                continue;
+                            }
+
                             $lat = $stations[$i]->lat;
                             $lng = $stations[$i]->lng;
                             $location = $lat. "," .$lng;
@@ -652,6 +688,10 @@ class PlannerController extends Controller
                         //place 1
                         for($i=$stIndex; $i <= $enIndex; $i++)
                         {
+                            if (in_array($i, $inactive)) {
+                                continue;
+                            }
+
                             $lat = $stations[$i]->lat;
                             $lng = $stations[$i]->lng;
                             $location = $lat. "," .$lng;
@@ -693,49 +733,53 @@ class PlannerController extends Controller
 
                         //place 2
                         for($i=$stIndex; $i<= $enIndex; $i++)
-                            {
-                                $lat = $stations[$i]->lat;
-                                $lng = $stations[$i]->lng;
-                                $location = $lat. "," .$lng;
-                                //dd($location);
-                                $response = GooglePlaces::nearbySearch($location, $radius,$keyword2);
-                                //dd($response["results"]);
-                                if(!empty($response["results"]) && count($response["results"]) > 0 )
-                                {
-                                    $data = $response["results"];
-                                    
-                                    $unmerge = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
-
-                                        //Find distance & duration
-                                        $tempLat = $data['geometry']['location']['lat'];
-                                        $tempLng = $data['geometry']['location']['lng'];
-                                        $tempLocation = $tempLat. "," .$tempLng;
-                                        //dd($tempLocation);
-                                        $distancematrix = json_decode(\GoogleMaps::load('distancematrix')->setParam (['origins' => $location, 'destinations' => $tempLocation, 'mode' => 'walking'])->get(),true);
-                                        $distance = $distancematrix['rows'][0]['elements'][0]['distance']['text'];
-                                        $duration = $distancematrix['rows'][0]['elements'][0]['duration']['text'];
-            
-                                        // Add the new property
-                                        $data['index'] = $i;
-                                        $data['diff'] = $i-$stIndex;
-                                        $data['distance'] = $distance;
-                                        $data['duration'] = $duration;
-                                    
-                                        // Return the new object
-                                        return $data;
-                                    
-                                    });
-
-                                    $locations = $locations->merge($unmerge);
-
-                                    //$locations->put('index', $i);
-                                    //$locations[1] = $i;
-
-                                    //$index = $index->merge($i); 
-                                break;
-                                }
-                                $locations =null;
+                        {
+                            if (in_array($i, $inactive)) {
+                                continue;
                             }
+
+                            $lat = $stations[$i]->lat;
+                            $lng = $stations[$i]->lng;
+                            $location = $lat. "," .$lng;
+                            //dd($location);
+                            $response = GooglePlaces::nearbySearch($location, $radius,$keyword2);
+                            //dd($response["results"]);
+                            if(!empty($response["results"]) && count($response["results"]) > 0 )
+                            {
+                                $data = $response["results"];
+                                
+                                $unmerge = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
+
+                                    //Find distance & duration
+                                    $tempLat = $data['geometry']['location']['lat'];
+                                    $tempLng = $data['geometry']['location']['lng'];
+                                    $tempLocation = $tempLat. "," .$tempLng;
+                                    //dd($tempLocation);
+                                    $distancematrix = json_decode(\GoogleMaps::load('distancematrix')->setParam (['origins' => $location, 'destinations' => $tempLocation, 'mode' => 'walking'])->get(),true);
+                                    $distance = $distancematrix['rows'][0]['elements'][0]['distance']['text'];
+                                    $duration = $distancematrix['rows'][0]['elements'][0]['duration']['text'];
+        
+                                    // Add the new property
+                                    $data['index'] = $i;
+                                    $data['diff'] = $i-$stIndex;
+                                    $data['distance'] = $distance;
+                                    $data['duration'] = $duration;
+                                
+                                    // Return the new object
+                                    return $data;
+                                
+                                });
+
+                                $locations = $locations->merge($unmerge);
+
+                                //$locations->put('index', $i);
+                                //$locations[1] = $i;
+
+                                //$index = $index->merge($i); 
+                            break;
+                            }
+                            $locations =null;
+                        }
                         
                         return view('planner', compact('fstation','stations','locations'));
 
@@ -745,6 +789,10 @@ class PlannerController extends Controller
                         //place1 
                         for($i=$stIndex; $i >= $enIndex; $i--)
                         {
+                            if (in_array($i, $inactive)) {
+                                continue;
+                            }
+
                             $lat = $stations[$i]->lat;
                             $lng = $stations[$i]->lng;
                             $location = $lat. "," .$lng;
@@ -786,6 +834,10 @@ class PlannerController extends Controller
                         //place 2
                         for($i=$stIndex; $i >= $enIndex; $i--)
                         {
+                            if (in_array($i, $inactive)) {
+                                continue;
+                            }
+                            
                             $lat = $stations[$i]->lat;
                             $lng = $stations[$i]->lng;
                             $location = $lat. "," .$lng;
