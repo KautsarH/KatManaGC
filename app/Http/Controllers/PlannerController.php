@@ -68,6 +68,8 @@ class PlannerController extends Controller
                 //search forward
                 for($i=$stIndex; $i< $numstation; $i++)
                 {
+
+                    dd(gettype($inactive));
                     if (in_array($i, $inactive)) {
                         continue;
                     }
@@ -120,7 +122,7 @@ class PlannerController extends Controller
                         if (in_array($i, $inactive)) {
                             continue;
                         }
-                        
+
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
