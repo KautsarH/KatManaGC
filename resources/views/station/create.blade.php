@@ -40,7 +40,7 @@
 							<th>{{ __('Latitude') }}</th>
 							<td>
 								<input class="form-control" 
-									type="decimal" name="lat" 
+									type="decimal" name="lat" id="lat"
 									value="{{ old('lat') }}">
 							</td>
 						</tr>
@@ -48,7 +48,7 @@
 							<th>{{ __('Longitude') }}</th>
 							<td>
 								<input class="form-control" 
-									type="decimal" name="lng" 
+									type="decimal" name="lng" id="lng"
 									value="{{ old('lng') }}">
 							</td>
 						</tr>
