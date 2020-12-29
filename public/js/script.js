@@ -67,6 +67,7 @@
           map: resultsMap,
           position: results[0].geometry.location,
         });
+        alert(address);
       } else {
         alert("Geocode was not successful for the following reason: " + status);
       }
