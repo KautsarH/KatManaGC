@@ -70,7 +70,7 @@ class PlannerController extends Controller
                 for($i=$stIndex; $i< $numstation; $i++)
                 {
 
-                    dd(gettype($inactive));
+                    //dd(gettype($inactive));
                     if (in_array($i, $inactive)) {
                         continue;
                     }
