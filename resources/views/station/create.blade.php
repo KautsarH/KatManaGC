@@ -53,6 +53,12 @@
 							</td>
 						</tr>
 						<tr>
+							<td>
+								<input id="submit" type="button" value="Geocode" onclick="geocode()"/>
+								<div id="geocode"> </div>
+							</td>
+						</tr>
+						<tr>
 							<th>Status</th>
 							<td>
 								<select class="form-control" id="status" name="status">

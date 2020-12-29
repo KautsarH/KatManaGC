@@ -42,7 +42,37 @@
   //     //initAutoComplete();
   //  }
  
-    
+  function geocode()
+  {
+    const map = new google.maps.Map(document.getElementById("geocode"), {
+      zoom: 18,
+      center: { lat: 3.2311691, lng: 101.7224767 },
+    });
+    const geocoder = new google.maps.Geocoder();
+    document.getElementById("submit").addEventListener("click", () => {
+      geocodeAddress(geocoder, map);
+    });
+  }
+  
+  function geocodeAddress(geocoder, resultsMap) {
+    const lat = document.getElementById("lat").value;  
+    const lng = document.getElementById("lng").value;  
+    const address = lat+","+ lng;
+  
+  
+    geocoder.geocode({ address: address }, (results, status) => {
+      if (status === "OK") {
+        resultsMap.setCenter(results[0].geometry.location);
+        new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location,
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
+
   function myFunction() {
     var obj = JSON.parse(document.getElementById("station_id").value);
     keyword = document.getElementById("keyword").value;
