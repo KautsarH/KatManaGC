@@ -19,6 +19,15 @@
       initMap();
       geocode();
     }
+
+    $('#tooltip').tooltip().eq(0).tooltip('show').tooltip('disable').one('mouseout', function() {
+      $(this).tooltip('enable');
+    });
+
+    setTimeout(function() {
+      $('#tooltip').tooltip().eq(0).tooltip('hide').tooltip('enable');
+     }, 5000);
+
     /*This is an example function and can be disregarded
     This function sets the loading div to a given string.*/
     
