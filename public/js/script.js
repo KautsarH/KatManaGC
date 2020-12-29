@@ -60,19 +60,19 @@
   }
   
   function geocodeAddress(geocoder, resultsMap) {
-    const lat = document.getElementById("lat").value;  
-    const lng = document.getElementById("lng").value;  
-    const address = lat+","+ lng;
+    const lat = parseFloat(document.getElementById("lat").value);  
+    const lng = parseFloat(document.getElementById("lng").value);  
+    const location = latlng;
   
   
-    geocoder.geocode({ address: address }, (results, status) => {
+    geocoder.geocode({ location: location }, (results, status) => {
       if (status === "OK") {
         resultsMap.setCenter(results[0].geometry.location);
         new google.maps.Marker({
           map: resultsMap,
           position: results[0].geometry.location,
         });
-        alert(results[0].geometry.location);
+        //alert(results[0].geometry.location);
       } else {
         alert("Geocode was not successful for the following reason: " + status);
       }

@@ -33,7 +33,7 @@
     <script src="{{ secure_asset('js/script.js') }}" defer async></script>
 
     <script async defer src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('googlemaps.key', null) }}&libraries=places&callback=run=&v=weekly"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('googlemaps.key', null) }}&libraries=places&callback=run"></script>
     <!-- <script src="{{ secure_asset('js/script.js') }}" defer></script> -->
     <!-- Favicon -->
 <link rel="apple-touch-icon" sizes="128x128" href="{{ secure_asset('images/icons/icon-128x128.png') }}">
