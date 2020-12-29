@@ -71,6 +71,8 @@ class PlannerController extends Controller
                 {
 
                     //dd(gettype($inactive));
+                    //skip inactive stations
+                    dd($inactive);
                     if (in_array($i, $inactive)) {
                         continue;
                     }
@@ -177,8 +179,12 @@ class PlannerController extends Controller
                 if( $option == 'single')
                 {
                     //forward
-                    for($i=$stIndex; $i< count($stations); $i++)
+                    for($i=$stIndex; $i< $numstation; $i++)
                     {
+                        if (in_array($i, $inactive)) {
+                            continue;
+                        }
+
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
