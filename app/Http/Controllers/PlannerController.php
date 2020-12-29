@@ -42,6 +42,8 @@ class PlannerController extends Controller
 
 
         //get stations
+        $numstation = count(\App\Station::all());
+        $inactive = \App\Station::where('status', 'inactive')->pluck('id');
         $stations = \App\Station::where('status', 'active')->get();
         $fstation = \App\Station::where('status', 'active')->first()->id;
         $radius = 10;
@@ -64,8 +66,12 @@ class PlannerController extends Controller
             {
                 
                 //search forward
-                for($i=$stIndex; $i< count($stations); $i++)
+                for($i=$stIndex; $i< $numstation; $i++)
                 {
+                    if (in_array($i, $inactive)) {
+                        continue;
+                    }
+
                     $lat = $stations[$i]->lat;
                     $lng = $stations[$i]->lng;
                     $location = $lat. "," .$lng;
@@ -111,6 +117,10 @@ class PlannerController extends Controller
                 //search backward
                 for($i=$stIndex-1; $i >= 0; $i--)
                     {
+                        if (in_array($i, $inactive)) {
+                            continue;
+                        }
+                        
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
