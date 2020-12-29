@@ -28,7 +28,7 @@
 						<a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
 						&nbsp;&nbsp;<i class="fa fa-subway" aria-hidden="true" id="tooltip" rel="tooltip" data-original-title="Add ending point"></i>&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
 						</a>  
-						<a id="tooltip" rel="tooltip" data-original-title="Just other tool tip data">with other tips about</a           
+						          
 					</div>
 					<div class="collapse" id="panel-1">
 						<div class="pt-3">
@@ -79,7 +79,7 @@
 					<!--End of Accordion-->
 				</div>
 			</div>                     
-        
+			<a id="tooltip" rel="tooltip" data-original-title="Just other tool tip data">with other tips about</a> 
 		<button onclick="loading()" class="btn btn-primary text-secondary mr-3" type="submit"><span class="ml-1"><span class="fas fa-search-location"></span></span></button>
 	<br>
 	</form>
