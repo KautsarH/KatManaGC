@@ -16,7 +16,7 @@ class StationController extends Controller
 
 	public function index(){
 
-        $stations = \App\Station::all();
+        $stations = \App\Station::orderBy('id')->get();
         //dd($stations);
         return view('station.index', compact('stations'));
 		
