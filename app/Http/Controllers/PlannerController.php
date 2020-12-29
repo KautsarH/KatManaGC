@@ -43,7 +43,8 @@ class PlannerController extends Controller
 
         //get stations
         $numstation = count(\App\Station::all());
-        $inactive = \App\Station::where('status', 'inactive')->pluck('id');
+        $inactivedb = \App\Station::where('status', 'inactive')->pluck('id');
+        $inactive = (array)$inactivedb;
         $stations = \App\Station::where('status', 'active')->get();
         $fstation = \App\Station::where('status', 'active')->first()->id;
         $radius = 10;
