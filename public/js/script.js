@@ -71,7 +71,7 @@
  
   function geocode()
   {
-    const map = new google.maps.Map(document.getElementById("geocode"), {
+    const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 18,
       center: { lat: 3.140853, lng: 101.693207 },
     });
