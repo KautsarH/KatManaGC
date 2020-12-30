@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <!-- <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet"> -->
     <link href="{{ secure_asset('css/main.css') }}" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ secure_asset('js/app.js') }}" defer async></script>
     <script src="{{ secure_asset('js/script.js') }}" defer async></script>
 
