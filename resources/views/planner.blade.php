@@ -51,7 +51,7 @@
 							</span>
 						@enderror
 						<a href="#panel-2" data-target="#panel-2" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
-						&nbsp;&nbsp;<i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
+						&nbsp;&nbsp;<i class="fa fa-map-marker" title="Add other place" data-toggle="tooltip" aria-hidden="true"></i>&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
 						</a>
 					</div>	
 						<div class="collapse" id="panel-2">
@@ -80,7 +80,7 @@
 				</div>
 			</div>   
 			<!-- <div id='tooltip'></div> -->
-			<a title="show on load" data-toggle="tooltip">Hello world</a>
+			<!-- <a title="show on load" data-toggle="tooltip">Hello world</a> -->
 			<!-- <a id="tooltip" rel="tooltip" data-original-title="Just other tool tip data">with other tips about</a>  -->
 		<button onclick="loading()" class="btn btn-primary text-secondary mr-3" type="submit"><span class="ml-1"><span class="fas fa-search-location"></span></span></button>
 	<br>
