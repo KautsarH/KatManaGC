@@ -28,14 +28,18 @@
   //      $('tooltip').tooltip('show');
   //      setTimeout(function(){ $('tooltip').tooltip('hide'); }, 3000);
   //  });
-    $('#tooltip').tooltip().eq(0).tooltip('show').tooltip('disable').one('mouseout', function() {
-      $(this).tooltip('enable');
-    });
+    // $('#tooltip').tooltip().eq(0).tooltip('show').tooltip('disable').one('mouseout', function() {
+    //   $(this).tooltip('enable');
+    // });
     
-    setTimeout(function() {
-     $('#tooltip').tooltip().eq(0).tooltip('hide').tooltip('enable');
-    }, 5000);
+    // setTimeout(function() {
+    //  $('#tooltip').tooltip().eq(0).tooltip('hide').tooltip('enable');
+    // }, 5000);
 
+    $(window).on("load", function(){
+      $('[data-toggle="tooltip"]').tooltip().mouseover();
+      setTimeout(function(){ $('[data-toggle="tooltip"]').tooltip('hide'); }, 3000);
+  });
     /*This is an example function and can be disregarded
     This function sets the loading div to a given string.*/
     
