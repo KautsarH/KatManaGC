@@ -36,7 +36,8 @@
     //  $('#tooltip').tooltip().eq(0).tooltip('hide').tooltip('enable');
     // }, 5000);
 
-    $(document).ready(function(){
+    //$(document).ready(function(){
+      $( "#tooltip" ).load(function() {  
       $('[data-toggle="tooltip"]').tooltip().mouseover();
       setTimeout(function(){ $('[data-toggle="tooltip"]').tooltip('hide'); }, 3000);
   });
