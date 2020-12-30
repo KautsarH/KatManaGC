@@ -86,5 +86,5 @@
 	<center><input id="submit" type="button" value="Geocode" onclick="geocode()"/></center>
 
 	<div id="geocode"> </div>
-
+<br>
 @endsection
