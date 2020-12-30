@@ -73,7 +73,7 @@
   {
     const map = new google.maps.Map(document.getElementById("geocode"), {
       zoom: 18,
-      center: { lat: 3.2311691, lng: 101.7224767 },
+      center: { lat: 3.140853, lng: 101.693207 },
     });
     const geocoder = new google.maps.Geocoder();
     const infowindow = new google.maps.InfoWindow();
@@ -101,7 +101,7 @@
           });
           infowindow.setContent(results[0].formatted_address);
           infowindow.open(map, marker);
-          window.alert(latlng);
+          window.alert(results[0].formatted_address);
         } else {
           window.alert("No results found");
         }
