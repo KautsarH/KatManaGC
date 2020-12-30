@@ -62,7 +62,7 @@
       with multiple timout sessions.*/
       clearTimeout(timeout);
       /*Set timeout delays a given function for given milliseconds*/
-      timeout = setTimeout(loaded, 3000);
+      timeout = setTimeout(loaded, 9000);
     }
     //   function initialize() {
   //     initMap();
