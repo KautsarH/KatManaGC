@@ -82,7 +82,7 @@
     });
   }
   
-  function geocodeLatLng(geocoder, resultsMap, infowindow) {
+  function geocodeLatLng(geocoder, map, infowindow) {
     const lat = document.getElementById("lat").value;  
     const lng = document.getElementById("lng").value;  
     const latlng = {
