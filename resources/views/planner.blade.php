@@ -26,7 +26,7 @@
 							</span>
 						@enderror
 						<a href="#panel-1" data-target="#panel-1" class="accordion-panel-header" data-toggle="collapse" aria-expanded="false" aria-controls="panel-1">
-						&nbsp;&nbsp;<i class="fa fa-subway" aria-hidden="true" id="tooltip" rel="tooltip" data-original-title="Add ending point"></i>&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
+						&nbsp;&nbsp;<i class="fa fa-subway" title="Add ending point" data-toggle="tooltip" aria-hidden="true" id="tooltip" rel="tooltip" data-original-title="Add ending point"></i>&nbsp;<span class="icon"><span class="fas fa-plus"></span></span>
 						</a>  
 						          
 					</div>
