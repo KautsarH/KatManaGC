@@ -17,7 +17,7 @@
     function run()
     {
       initMap();
-      geocode();
+      rgeocode();
     }
 
 
