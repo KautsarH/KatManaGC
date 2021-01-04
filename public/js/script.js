@@ -101,7 +101,10 @@
           });
           infowindow.setContent(results[0].formatted_address);
           infowindow.open(map, marker);
-          window.alert(results[0].formatted_address);
+          //window.alert(results[0].formatted_address);
+          window.alert(typeof latlng);
+
+          
         } else {
           window.alert("No results found");
         }
