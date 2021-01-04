@@ -50,6 +50,7 @@
 
 <!-- Pixel CSS -->
 <link type="text/css" href="{{ secure_asset('css/neumorphism.css') }}" rel="stylesheet">
+
 @laravelPWA
 </head>
 
