@@ -36,9 +36,9 @@
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
     <script src="{{ secure_asset('js/app.js') }}" defer async></script>
+    <script src="{{ secure_asset('js/script.js') }}" defer async></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ config('googlemaps.key', null) }}&libraries=places&callback=initMap"></script>
     
-    <script src="{{ secure_asset('js/script.js') }}" defer async></script>
 
     <!-- <script src="{{ secure_asset('js/script.js') }}" defer></script> -->
     <!-- Favicon -->
