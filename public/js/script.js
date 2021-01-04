@@ -38,7 +38,7 @@
 
     $(document).ready(function(){
       //$( "#tooltip" ).load(function() {  
-      jQuery('[data-toggle="tooltip"]').tooltip().mouseover();
+      $('[data-toggle="tooltip"]').tooltip().mouseover();
       setTimeout(function(){ $('[data-toggle="tooltip"]').tooltip('hide'); }, 3000);
   });
     /*This is an example function and can be disregarded
