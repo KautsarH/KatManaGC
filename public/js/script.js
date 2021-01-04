@@ -14,11 +14,11 @@
     var timeout;
     let tbl;
 
-    function run()
-    {
-      initMap();
-      //rgeocode();
-    }
+    // function run()
+    // {
+    //   initMap();
+    //   //rgeocode();
+    // }
 
 
   //   $('tooltip').tooltip({
