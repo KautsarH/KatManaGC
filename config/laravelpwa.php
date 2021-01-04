@@ -1,7 +1,7 @@
 <?php
 
-//return [
-  //  'name' => 'KatMana',
+return [
+    'name' => 'KatMana',
     'manifest' => [
         'name' => env('APP_NAME', 'KatMana'),
         'short_name' => 'KatMana',
@@ -75,4 +75,4 @@
         ],
         'custom' => []
     ]
-//];
+];
