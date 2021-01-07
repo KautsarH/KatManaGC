@@ -52,12 +52,12 @@
 									value="{{ old('lng') }}">
 							</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<th></th>
 							<td>
 							<center><input id="submit" type="button" value="Geocode" onclick="rgeocode()"/></center>
 							</td>
-						</tr>
+						</tr> -->
 						<tr>
 							<th>Status</th>
 							<td>
@@ -86,6 +86,6 @@
 	</div>
 	
 
-	<div id="geocode"> </div>
+	<!-- <div id="geocode"> </div> -->
 <br>
 @endsection

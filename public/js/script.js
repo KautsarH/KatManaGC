@@ -153,7 +153,7 @@
   }
 
     function initMap() {
-      rgeocode();
+      // rgeocode();
       // Initialize variables
       //bounds = new google.maps.LatLngBounds();
       infoWindow = new google.maps.InfoWindow;
